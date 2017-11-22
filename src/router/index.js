@@ -50,7 +50,9 @@ export default new Router({
     },
     {
       path: '/assets',
-      component: Assets
+      component: Assets,
+      children: [
+      ]
     },
     {
       path: '/order',
