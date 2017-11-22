@@ -1,5 +1,6 @@
 <template>
   <div class="farm-goods">
+    <router-view/>
     <header-bar @gohome="gohome"></header-bar>
     <scroll :data="list" class="wrapper">
       <div>
@@ -31,7 +32,7 @@
         this.$router.back()
       },
       godetail() {
-        this.$router.push('/goodsdetail')
+        this.$router.push('/home/farmgoods/goodsdetail')
       }
     },
     components: {
@@ -51,6 +52,7 @@
     top: 44px
     bottom: 0
     width: 100%
+    z-index: 200
     .wrapper
       height: 100%
       overflow: hidden

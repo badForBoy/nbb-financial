@@ -1,5 +1,6 @@
 <template>
   <div class="home" :data="goodslist">
+    <router-view/>
     <header-bar></header-bar>
     <scroll class="scroll-content">
       <div class="wrapper">
@@ -55,10 +56,10 @@
     },
     methods: {
       gofarmgoods() {
-        this.$router.push('/farmgoods')
+        this.$router.push('/home/farmgoods')
       },
       godetail() {
-        this.$router.push('/goodsdetail')
+        this.$router.push('/home/farmgoods/goodsdetail')
       }
     },
     components: {

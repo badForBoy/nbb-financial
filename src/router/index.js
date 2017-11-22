@@ -7,6 +7,7 @@ import My from '../components/my/my.vue'
 import FarmGoods from '../components/farm-goods/farm-goods.vue'
 import GoodsDetail from '../components/goods-detail/goods-detail.vue'
 import PanicBuying from '../components/panic-buying/panic-buying.vue'
+import HistoryRecord from '../components/historical-record/historical-record.vue'
 
 Vue.use(Router)
 
@@ -18,7 +19,29 @@ export default new Router({
     },
     {
       path: '/home',
-      component: Home
+      component: Home,
+      children: [
+        {
+          path: 'farmgoods',
+          component: FarmGoods,
+          children: [
+            {
+              path: 'goodsdetail',
+              component: GoodsDetail,
+              children: [
+                {
+                  path: 'panicBuying',
+                  component: PanicBuying
+                },
+                {
+                  path: 'historyRecord',
+                  component: HistoryRecord
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       path: '/assets',
@@ -31,18 +54,6 @@ export default new Router({
     {
       path: '/my',
       component: My
-    },
-    {
-      path: '/farmgoods',
-      component: FarmGoods
-    },
-    {
-      path: '/goodsdetail',
-      component: GoodsDetail
-    },
-    {
-      path: '/panicBuying',
-      component: PanicBuying
     }
   ]
 })

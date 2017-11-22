@@ -1,4 +1,10 @@
 @import "./base.styl"
+
+.title
+  font-size: $font-size-small
+  color: $color-text-l
+  padding: 10px
+
 .detail-group
   background: $color-background
   margin-bottom: 10px
@@ -16,8 +22,10 @@
         border: none
     .item-right
       color: $color-text-d
-      &.red
+      &.red,&.add
         color: $color-theme-b
+      &.reduce
+        color: $color-theme
     .go
       display: flex
       justify-content: space-between

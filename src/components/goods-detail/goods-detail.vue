@@ -1,5 +1,6 @@
 <template>
   <div class="goods-detail">
+    <router-view/>
     <header-bar @gohome="back"></header-bar>
     <div class="warn" v-show="wran">
       <span>
@@ -47,7 +48,7 @@
               <img src="./icon_more.png">
             </p>
           </div>
-          <div class="item">
+          <div class="item" @click="historyRecord">
             <p>历史收益记录</p>
             <p class="go item-right">
               <img src="./icon_more.png">
@@ -134,8 +135,11 @@
       }
     },
     methods: {
+      historyRecord() {
+        this.$router.push('/home/farmgoods/goodsdetail/historyRecord')
+      },
       panicBuying() {
-        this.$router.push('/panicBuying')
+        this.$router.push('/home/farmgoods/goodsdetail/panicBuying')
       },
       back() {
         this.$router.back()
@@ -168,6 +172,7 @@
     bottom: 44px
     width: 100%
     background: $color-theme-e
+    z-index: 200
     .warn
       position: fixed
       top: 44px

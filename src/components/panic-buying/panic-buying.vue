@@ -1,6 +1,6 @@
 <template>
   <div class="panic-buying">
-    <header-bar></header-bar>
+    <header-bar @gohome="back"></header-bar>
     <scroll :data="list" class="wrapper">
       <div>
         <div class="detail-group">
@@ -107,6 +107,9 @@
           this.count--
         }
         return this.count
+      },
+      back() {
+        this.$router.back()
       }
     },
     components: {
@@ -119,7 +122,6 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "../../common/stylus/detailgroup.styl"
   @import "../../common/stylus/base.styl"
 
   .panic-buying
@@ -128,25 +130,10 @@
     bottom: 44px
     width: 100%
     background: $color-background-d
+    z-index: 200
     .wrapper
       height: 100%
       overflow: hidden
-      .title
-        font-size: $font-size-small
-        color: $color-text-l
-        padding: 10px
-
-  .buy-btn
-    position: fixed
-    bottom: 0
-    left: 0
-    right: 0
-    height: 44px
-    line-height: 44px
-    text-align: center
-    background: $color-theme-b
-    color: $color-text-f
-    cursor: pointer
 
   .mint-radiolist-title
     display: none
