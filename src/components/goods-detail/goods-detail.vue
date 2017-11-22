@@ -54,7 +54,7 @@
               <img src="./icon_more.png">
             </p>
           </div>
-          <div class="item">
+          <div class="item" @click="Ranking">
             <p>抢购排名</p>
             <p class="go item-right">
               <img src="./icon_more.png">
@@ -140,6 +140,9 @@
       },
       panicBuying() {
         this.$router.push('/home/farmgoods/goodsdetail/panicBuying')
+      },
+      Ranking() {
+        this.$router.push('/home/farmgoods/goodsdetail/ranking')
       },
       back() {
         this.$router.back()

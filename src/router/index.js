@@ -8,6 +8,7 @@ import FarmGoods from '../components/farm-goods/farm-goods.vue'
 import GoodsDetail from '../components/goods-detail/goods-detail.vue'
 import PanicBuying from '../components/panic-buying/panic-buying.vue'
 import HistoryRecord from '../components/historical-record/historical-record.vue'
+import Ranking from '../components/ranking/ranking.vue'
 
 Vue.use(Router)
 
@@ -36,6 +37,10 @@ export default new Router({
                 {
                   path: 'historyRecord',
                   component: HistoryRecord
+                },
+                {
+                  path: 'ranking',
+                  component: Ranking
                 }
               ]
             }
