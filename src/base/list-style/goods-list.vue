@@ -29,6 +29,11 @@
       <div class="btn" v-show="btn">
         <span :class="btnColor">立即抢购</span>
       </div>
+      <div class="scale" v-show="!btn">
+        <span class="bg"></span>
+        <span class="listtext">剩余160头</span>
+        <span ref="listcount" class="list-count"></span>
+      </div>
     </div>
   </div>
 </template>
@@ -61,12 +66,19 @@
       btnColor: {
         type: String,
         default: 'red'
+      },
+      listcount: {
+        type: Number,
+        default: 0
       }
     },
     methods: {
       go() {
         this.$emit('godetail')
       }
+    },
+    mounted() {
+      this.$refs.listcount.style.width = `${this.listcount}%`
     }
   }
 </script>
@@ -170,5 +182,37 @@
             background: $color-theme
           &.red
             background: $color-theme-b
+      .scale
+        position: relative
+        height: 44px
+        box-sizing: border-box
+        margin: 10px
+        .bg
+          display: block
+          height: 24px
+          line-height: 24px
+          text-align: center
+          width: 100%
+          border-radius: 13px
+          border: 1px solid $color-theme-b
+          color: $color-theme-b
+          overflow: hidden
+        .list-count
+          position: absolute
+          height: 24px
+          line-height: 24px
+          border-radius: 10px
+          top: 1px
+          left: 1px
+          background: $color-theme-p
+          text-align: center
+          font-size: $font-size-small
+        .listtext
+          font-size: $font-size-small
+          color: $color-theme-b
+          position: absolute
+          left: 45%
+          top: 6px
+          z-index: 10
 
 </style>

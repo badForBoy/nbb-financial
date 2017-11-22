@@ -1,0 +1,51 @@
+.detail-group
+  background: $color-background
+  margin-bottom: 10px
+  padding: 0 10px
+  .item
+    display: flex
+    align-items: center
+    height: 36px
+    font-size: $font-size-medium
+    color: $color-text
+    justify-content: space-between
+    border-1px($color-theme-e)
+    &:last-child
+      &:after
+        border: none
+    .item-right
+      color: $color-text-d
+    .go
+      display: flex
+      justify-content: space-between
+      img
+        height: 13px
+        padding-left: 10px
+      span
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+    p
+      max-width: 60%
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      &.small
+        font-size: $font-size-small
+        color: $color-text-l
+    .count
+      .num
+        min-width: 34px
+        background: $color-theme-f
+        vertical-align: top
+      span
+        display: inline-block
+        width: 24px
+        height: 24px
+        line-height: 24px
+        text-align: center
+        border-radius: 2px
+        background: $color-background
+        &.num-btn
+          img
+            width: 24px
