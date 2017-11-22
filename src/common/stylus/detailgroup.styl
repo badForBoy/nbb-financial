@@ -1,3 +1,4 @@
+@import "./base.styl"
 .detail-group
   background: $color-background
   margin-bottom: 10px
@@ -5,7 +6,7 @@
   .item
     display: flex
     align-items: center
-    height: 36px
+    height: 48px
     font-size: $font-size-medium
     color: $color-text
     justify-content: space-between
@@ -15,6 +16,8 @@
         border: none
     .item-right
       color: $color-text-d
+      &.red
+        color: $color-theme-b
     .go
       display: flex
       justify-content: space-between

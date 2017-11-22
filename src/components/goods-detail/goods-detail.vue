@@ -110,7 +110,7 @@
         </div>
       </div>
     </scroll>
-    <div class="buy-btn">
+    <div class="buy-btn" @click="panicBuying">
       立即抢购
     </div>
   </div>
@@ -134,6 +134,9 @@
       }
     },
     methods: {
+      panicBuying() {
+        this.$router.push('/panicBuying')
+      },
       back() {
         this.$router.back()
       },
@@ -203,4 +206,6 @@
     text-align: center
     background: $color-theme-b
     color: $color-text-f
+    cursor: pointer
+
 </style>

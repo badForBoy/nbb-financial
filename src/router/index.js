@@ -6,6 +6,7 @@ import Order from '../components/order/order.vue'
 import My from '../components/my/my.vue'
 import FarmGoods from '../components/farm-goods/farm-goods.vue'
 import GoodsDetail from '../components/goods-detail/goods-detail.vue'
+import PanicBuying from '../components/panic-buying/panic-buying.vue'
 
 Vue.use(Router)
 
@@ -38,6 +39,10 @@ export default new Router({
     {
       path: '/goodsdetail',
       component: GoodsDetail
+    },
+    {
+      path: '/panicBuying',
+      component: PanicBuying
     }
   ]
 })
