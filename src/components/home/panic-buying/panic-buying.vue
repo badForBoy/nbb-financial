@@ -1,6 +1,6 @@
 <template>
   <div class="panic-buying">
-    <header-bar @gohome="back"></header-bar>
+    <header-bar @gohome="back" :title="title"></header-bar>
     <scroll :data="list" class="wrapper">
       <div>
         <div class="detail-group">
@@ -45,7 +45,7 @@
           <div class="item">
             <p>可用9000农币抵90元</p>
             <div class="item-right">
-              <mt-switch v-model="value"></mt-switch>
+              <mt-switch v-model="switchValue"></mt-switch>
             </div>
           </div>
         </div>
@@ -64,22 +64,24 @@
 
       </div>
     </scroll>
-    <div class="buy-btn" @click="panicBuying">
+    <div class="buy-btn">
       立即支付
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import headerBar from '../../base/header-bar/header-bar.vue'
-  import Scroll from '../../base/scroll/scroll.vue'
-  import { Switch, Radio } from 'mint-ui'
+  import headerBar from '../../../base/header-bar/header-bar.vue'
+  import Scroll from '../../../base/scroll/scroll.vue'
 
   export default{
     data() {
       return {
         list: [],
-        count: 0
+        count: 0,
+        switchValue: true,
+        value: 'wx',
+        title: '确认抢购'
       }
     },
     created() {
@@ -114,15 +116,13 @@
     },
     components: {
       headerBar,
-      Scroll,
-      Switch,
-      Radio
+      Scroll
     }
   }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "../../common/stylus/base.styl"
+  @import "../../../common/stylus/base.styl"
 
   .panic-buying
     position: fixed

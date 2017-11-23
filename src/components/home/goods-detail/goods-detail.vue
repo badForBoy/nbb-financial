@@ -1,7 +1,7 @@
 <template>
   <div class="goods-detail">
     <router-view/>
-    <header-bar @gohome="back"></header-bar>
+    <header-bar @gohome="back" :title="title"></header-bar>
     <div class="warn" v-show="wran">
       <span>
         <img src="./icon_warn.png">
@@ -118,9 +118,9 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import headerBar from '../../base/header-bar/header-bar.vue'
-  import goodsList from '../../base/list-style/goods-list.vue'
-  import Scroll from '../../base/scroll/scroll.vue'
+  import headerBar from '../../../base/header-bar/header-bar.vue'
+  import goodsList from '../../../base/list-style/goods-list.vue'
+  import Scroll from '../../../base/scroll/scroll.vue'
 
   export default{
     created() {
@@ -131,7 +131,8 @@
       return {
         list: [],
         count: 0,
-        wran: true
+        wran: true,
+        title: '农场详情'
       }
     },
     methods: {
@@ -166,8 +167,8 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "../../common/stylus/base.styl"
-  @import "../../common/stylus/detailgroup.styl"
+  @import "../../../common/stylus/base.styl"
+  @import "../../../common/stylus/detailgroup.styl"
 
   .goods-detail
     position: fixed

@@ -1,7 +1,7 @@
 <template>
   <div class="assets">
     <router-view></router-view>
-    <header-bar @gohome="back"></header-bar>
+    <header-bar @gohome="back" :title="title"></header-bar>
     <scroll class="wrapper" :data="list">
       <div>
         <div class="assets-all">
@@ -10,14 +10,14 @@
               <span class="eyes open" :class="{'open': toggleeyes,'closed': !toggleeyes}" @click="toggleEyes"></span>
             </h3>
             <h1>{{toggleeNum}}</h1>
-            <p><span>查看详情</span> <span class="icom-assets-more"><img src="./icon_assets_more.png"></span></p>
+            <p @click="bill"><span>查看详情</span> <span class="icom-assets-more"><img src="./icon_assets_more.png"></span></p>
           </div>
           <div class="assets-active">
             <div class="active-item">
               <p class="item-title">可用余额</p>
               <p>9000.00</p>
             </div>
-            <div class="active-item">
+            <div @click="withdrawals" class="active-item">
               <span class="btn">
                 提现
               </span>
@@ -25,31 +25,31 @@
           </div>
         </div>
         <div class="detail-group">
-          <div class="item">
+          <div class="item" @click="yesterday">
             <p>昨日收益</p>
             <p class="go item-right">
               <img src="./icon_more.png">
             </p>
           </div>
-          <div class="item">
+          <div class="item" @click="cumulative">
             <p>累计收益</p>
             <p class="go item-right">
               <img src="./icon_more.png">
             </p>
           </div>
-          <div class="item">
+          <div class="item" @click="cost">
             <p>养殖成本</p>
             <p class="go item-right">
               <img src="./icon_more.png">
             </p>
           </div>
-          <div class="item">
+          <div class="item" @click="expectYear">
             <p>预期年化收益率</p>
             <p class="go item-right">
               <img src="./icon_more.png">
             </p>
           </div>
-          <div class="item">
+          <div class="item" @click="expectProfit">
             <p>预期收益</p>
             <p class="go item-right">
               <img src="./icon_more.png">
@@ -71,7 +71,8 @@
       return {
         list: [],
         toggleeyes: true,
-        num: 0
+        num: 0,
+        title: '资产'
       }
     },
     computed: {
@@ -87,6 +88,27 @@
     methods: {
       back() {
         this.$router.back()
+      },
+      withdrawals() {
+        this.$router.push('/assets/withdrawals')
+      },
+      bill() {
+        this.$router.push('/assets/bill')
+      },
+      yesterday() {
+        this.$router.push('/assets/yesterday')
+      },
+      cumulative() {
+        this.$router.push('/assets/cumulative')
+      },
+      cost() {
+        this.$router.push('/assets/cost')
+      },
+      expectYear() {
+        this.$router.push('/assets/expectYear')
+      },
+      expectProfit() {
+        this.$router.push('/assets/expectProfit')
       },
       toggleEyes() {
         this.toggleeyes = !this.toggleeyes

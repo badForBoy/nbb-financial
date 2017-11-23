@@ -1,7 +1,7 @@
 <template>
   <div class="home" :data="goodslist">
     <router-view/>
-    <header-bar></header-bar>
+    <header-bar :title="title"></header-bar>
     <scroll class="scroll-content">
       <div class="wrapper">
         <div class="banner">
@@ -39,7 +39,7 @@
   import GoodsList from '../../base/list-style/goods-list.vue'
   import Scroll from '../../base/scroll/scroll.vue'
   import TopTitle from '../../base/top-title/top-title.vue'
-  import { Swipe, SwipeItem } from 'mint-ui'
+//  import { Swipe, SwipeItem } from 'mint-ui'
 
   export default{
     created() {
@@ -48,6 +48,7 @@
       this.profit = false
       this.btn = false
       this.btnColor = 'blue'
+      this.title = '农场'
     },
     data() {
       return {
@@ -65,8 +66,6 @@
     components: {
       BottomBar,
       HeaderBar,
-      Swipe,
-      SwipeItem,
       GoodsList,
       Scroll,
       TopTitle

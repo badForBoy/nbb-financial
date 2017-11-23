@@ -1,6 +1,6 @@
 <template>
   <div class="historical-record">
-    <header-bar @gohome="back"></header-bar>
+    <header-bar @gohome="back" :title="title"></header-bar>
     <scroll class="wrapper">
       <div>
         <div class="detail-group">
@@ -40,10 +40,15 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import headerBar from '../../base/header-bar/header-bar.vue'
-  import Scroll from '../../base/scroll/scroll.vue'
+  import headerBar from '../../../base/header-bar/header-bar.vue'
+  import Scroll from '../../../base/scroll/scroll.vue'
 
   export default{
+    data() {
+      return {
+        title: '历史收益记录'
+      }
+    },
     components: {
       headerBar,
       Scroll
@@ -57,7 +62,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "../../common/stylus/base.styl"
+  @import "../../../common/stylus/base.styl"
   .historical-record
     position: fixed
     z-index: 300

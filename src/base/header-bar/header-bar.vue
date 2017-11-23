@@ -9,10 +9,10 @@
       </span>
     </div>
     <div class="item center">
-      农场
+      {{title}}
     </div>
     <div class="item right">
-      <span v-show="question" class="icon icon-problem">
+      <span v-show="question" @click="questionGo" class="icon icon-problem">
         <img src="./nav_icon_problem.png">
       </span>
     </div>
@@ -25,11 +25,18 @@
       question: {
         type: Boolean,
         default: false
+      },
+      title: {
+        type: Object,
+        default: ''
       }
     },
     methods: {
       back() {
         this.$emit('gohome')
+      },
+      questionGo() {
+        this.$emit('questionGo')
       }
     }
   }
@@ -72,6 +79,6 @@
                height: 16px
       &.center
         font-size: $font-size-medium-x
-        color: $color-text-d
+        color: $color-text
         text-align: center
 </style>

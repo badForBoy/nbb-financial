@@ -22,9 +22,9 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import headerBar from '../../base/header-bar/header-bar.vue'
-  import Scroll from '../../base/scroll/scroll.vue'
-  import RanklingList from '../../base/list-style/ranking-list.vue'
+  import headerBar from '../../../base/header-bar/header-bar.vue'
+  import Scroll from '../../../base/scroll/scroll.vue'
+  import RanklingList from '../../../base/list-style/ranking-list.vue'
 
   export default{
     created() {
@@ -44,7 +44,7 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  @import "../../common/stylus/base.styl"
+  @import "../../../common/stylus/base.styl"
   .ranking
     position: fixed
     z-index: 300
