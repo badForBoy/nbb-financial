@@ -75,7 +75,7 @@
     bottom: 0
     width: 100%
     z-index: 300
-    background: $color-theme-e
+    background: $color-background-d
     .wrapper
       .rule-wrapper
         padding-top: 20px

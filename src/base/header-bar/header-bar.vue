@@ -27,7 +27,7 @@
         default: false
       },
       title: {
-        type: Object,
+        type: String,
         default: ''
       }
     },

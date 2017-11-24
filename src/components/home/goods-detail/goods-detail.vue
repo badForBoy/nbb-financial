@@ -175,7 +175,7 @@
     top: 76px
     bottom: 44px
     width: 100%
-    background: $color-theme-e
+    background: $color-background-d
     z-index: 200
     .warn
       position: fixed

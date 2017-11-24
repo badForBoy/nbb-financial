@@ -130,7 +130,7 @@
     top: 44px
     bottom: 48px
     width: 100%
-    background: $color-theme-e
+    background: $color-background-d
     .wrapper
       height: 100%
       overflow: hidden

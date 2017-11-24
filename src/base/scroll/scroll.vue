@@ -9,6 +9,10 @@
 
   export default{
     props: {
+      scrollY: {
+        type: Boolean,
+        default: false
+      },
       // 以下多个属性数据都可由上级组件传递过来
       probeType: {
         // 1是截留滚动 3实时滚动的位置

@@ -4,7 +4,7 @@
       <p>订单号: 48784s878sad48</p>
       <p>待付款</p>
     </div>
-    <div class="order-contend">
+    <div class="order-contend" @click="toDetail">
       <div class="item item-pic">
         <img src="http://tupian.geimian.com/pic/2015/06/2015-06-27_210910.jpg">
       </div>
@@ -17,7 +17,7 @@
         x5
       </div>
     </div>
-    <div class="order-active">
+    <div class="order-active" v-show="btnShow">
       <div class="active-left">
         实付：<span class="red">￥900.00</span>
       </div>
@@ -31,6 +31,17 @@
 
 <script type="text/ecmascript-6">
   export default {
+    props: {
+      btnShow: {
+        type: Boolean,
+        default: true
+      }
+    },
+    methods: {
+      toDetail() {
+        this.$emit('toDetail')
+      }
+    }
   }
 </script>
 

@@ -102,7 +102,7 @@
     bottom: 0
     width: 100%
     z-index: 200
-    background: $color-theme-e
+    background: $color-background-d
     .detail-group
       .item
         .item-right.input

@@ -48,7 +48,7 @@
   @import "../../../common/stylus/variable.styl"
 
   .farm-goods
-    background: $color-theme-e
+    background: $color-background-d
     position: fixed
     top: 44px
     bottom: 0

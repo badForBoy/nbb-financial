@@ -84,7 +84,7 @@
     top: 44px
     bottom: 0
     width: 100%
-    background: $color-theme-e
+    background: $color-background-d
     z-index: 200
     .wrapper
       height: 100%
