@@ -1,6 +1,8 @@
 <template>
   <div class="my-car">
-    <router-view></router-view>
+    <transition name="slide">
+      <router-view></router-view>
+    </transition>
     <header-bar @gohome="back" :title="title"></header-bar>
     <scroll class="wrapper">
       <div>
@@ -104,7 +106,7 @@
         box-sizing: border-box
         border-radius: 8px
         background: $color-background
-        margin-bottom: 50px
+        margin: 10px
         img
           width: 100%
       .add-bot
@@ -170,4 +172,9 @@
               height: 100%
               opacity: 0
 
+
+  .slide-enter-active, .slide-leave-active
+    transition: all 0.5s
+  .slide-enter, .slide-leave-active
+    transform: translate3d(100%, 0, 0)
 </style>

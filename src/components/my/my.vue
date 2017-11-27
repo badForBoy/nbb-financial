@@ -6,26 +6,27 @@
       <div>
         <div class="base">
           <div class="base-top">
-            <div class="top-left">
+            <router-link tag="div" to="/my/personalInfo" class="top-left">
               <img src="http://tupian.geimian.com/pic/2015/06/2015-06-27_210910.jpg">
-            </div>
+            </router-link>
             <div class="top-right">
-              <p class="right-item">nbb123</p>
-              <p class="right-item">电话：13665786632</p>
+              <p class="right-item">{{name}}</p>
+              <p class="right-item">电话：{{phone}}</p>
+              <p @click="change">改变</p>
               <span class="icon right-item">
                 <img src="./icon_-certified.png">
               </span>
             </div>
           </div>
           <div class="base-bot">
-            <div class="item">
+            <router-link to="/assets" tag="div" class="item">
               <div class="item-count">
                 10000.00
               </div>
               <div class="item-title">
                 余额（元）
               </div>
-            </div>
+            </router-link>
             <router-link to="/my/myCoin" tag="div" class="item">
               <div class="item-count">
                 1234
@@ -108,6 +109,7 @@
             </router-link>
           </div>
         </div>
+        <!--<loading></loading>-->
       </div>
     </scroll>
     <bottom-bar></bottom-bar>
@@ -118,6 +120,8 @@
   import headerBar from '../../base/header-bar/header-bar.vue'
   import bottomBar from '../../base/bottom-bar/bottom-bar.vue'
   import Scroll from '../../base/scroll/scroll.vue'
+  import Loading from '../../base/loading/loading.vue'
+  import { mapState, mapGetters, mapMutations } from 'vuex'
 
   export default{
     data() {
@@ -125,15 +129,41 @@
         title: '我的'
       }
     },
+    computed: {
+//      name() {
+//        return this.$store.state.user
+//      },
+      ...mapState([
+        'user'
+      ]),
+      ...mapGetters([
+        'name',
+        'phone'
+      ])
+    },
+    mounted() {
+//      this.change()
+    },
     methods: {
+      change() {
+        const user = {
+          name: 'b',
+          phone: 13666666666
+        }
+        this.setUser(user)
+      },
       back() {
         this.$router.back()
-      }
+      },
+      ...mapMutations({
+        setUser: 'SET_USER'
+      })
     },
     components: {
       headerBar,
       bottomBar,
-      Scroll
+      Scroll,
+      Loading
     }
   }
 </script>

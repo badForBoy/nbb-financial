@@ -53,7 +53,6 @@
           width: 24px
           height: 24px
           background-size: 24px 24px !important
-          margin-bottom: 4px
           &.icon-farm
             background:url("icon_farm_default.png")
           &.icon-assets

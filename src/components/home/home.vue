@@ -94,7 +94,7 @@
           background: $color-dialog-background
           margin-bottom: 12px
         .lists
-          height: 270px
+          height: 290px
           background: $color-background
 
 </style>

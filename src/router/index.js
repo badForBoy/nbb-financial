@@ -31,6 +31,8 @@ import Message from '../components/my/message/message.vue'
 import MyCoin from '../components/my/my-coin/my-coin.vue'
 import Invitation from '../components/my/invitation/invitation.vue'
 import AddCar from '../components/my/add-car/add-car.vue'
+import PersonalInfo from '../components/my/personal-info/personal-info.vue'
+import NameCertification from '../components/my/name-certification/name-certification.vue'
 
 Vue.use(Router)
 
@@ -164,7 +166,13 @@ export default new Router({
         },
         {
           path: 'myContract',
-          component: MyContract
+          component: MyContract,
+          children: [
+            {
+              path: 'rule',
+              component: Rule
+            }
+          ]
         },
         {
           path: 'friends',
@@ -187,6 +195,16 @@ export default new Router({
         {
           path: 'invitation',
           component: Invitation
+        },
+        {
+          path: 'personalInfo',
+          component: PersonalInfo,
+          children: [
+            {
+              path: 'nameCertification',
+              component: NameCertification
+            }
+          ]
         }
       ]
     }

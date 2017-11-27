@@ -8,7 +8,9 @@
           <div class="item">
             <div>提现方式</div>
             <select @change="togglePayWay" v-model="selected" class="item-right text-right input">
+              <span></span>
               <option :value="item.value" v-for="(item, index) in options">{{item.label}}</option>
+              <span></span>
             </select>
           </div>
           <div class="pay-zfb" v-show="payWay">
@@ -109,6 +111,9 @@
           padding: 6px 4px;
           width: 60%;
           text-align: right
+          span
+            width: 100%
+            padding: 0 6px
     .btn
       text-align: center
       padding: 0 10px
